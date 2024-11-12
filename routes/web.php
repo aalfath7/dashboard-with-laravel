@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\News;
+use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ Route::get('/news', function () {
 
 Route::get('/news/{news:slug}', function (News $news){
     return view('news-detail', ['item' => $news]);
+});
+
+Route::get('/authors/{user}', function (User $user){
+    return view('news', ['news' => $user->news]);
 });
 
 

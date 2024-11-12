@@ -36,7 +36,10 @@
                             {{ Str::limit($item['content'], 60) }}
                         </td>
                         <td class="capitalize px-6 py-4">
-                            {{ $item['author'] }}
+                            <a href="/authors/{{ $item->author->id }}"
+                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                {{ $item->author->name }}</a>
+
                         </td>
                         <td class="capitalize py-6 px-6">
                             <div class="flex space-x-2">
